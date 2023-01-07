@@ -1,0 +1,18 @@
+import React from "react";
+
+type ColorProps = {
+  params: {
+    colorId: string;
+  };
+};
+
+async function Color({ params }: ColorProps) {
+  const data = await fetch(
+    `https://reqres.in/api/products?id=${params.colorId}`
+  );
+  const response = await data.json();
+  console.log(response);
+  return <div>hello</div>;
+}
+
+export default Color;
